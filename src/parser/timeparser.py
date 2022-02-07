@@ -13,7 +13,8 @@ class TimeParser:
         """
         This is a constructor for the Time parser.
         It initiates a TimeParser with desired intervals
-        e.g. interval_in__milliseconds=10000 creates intervals of 10 seconds in that video
+        e.g. interval_in__milliseconds=10000 creates
+        intervals of 10 seconds in that video
         """
 
         self.interval_in_milliseconds = int(
@@ -24,7 +25,8 @@ class TimeParser:
 
     def get_related_intervals(self, start, end):
         """
-        This method returns a list of intervals based on start  and end time passed
+        This method returns a list of intervals based on
+        start  and end time passed
         e.g.
         start:00:00:00
         end: 00:00:35
@@ -41,7 +43,7 @@ class TimeParser:
         if (
             end - start < self.interval_in_milliseconds
         ):  # CASE: when appearance is within time interval
-            intervals.append(int(start) - int(start) % self.interval_in_milliseconds)
+            intervals.append(int(start) - int(start) % self.interval_in_milliseconds) # noqa  E501
         for i in range(int(start), int(end)):
             if i % self.interval_in_milliseconds == 0:
                 intervals.append(i)
@@ -57,7 +59,7 @@ class TimeParser:
         :param string_time:
         :return: passed time converted to milliseconds
         """
-        if re.search("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", string_time):
+        if re.search("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", string_time): # noqa: E501,E261
             date_time = datetime.strptime(string_time, "%H:%M:%S")
         elif re.search("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\.\d", string_time):
             date_time = datetime.strptime(string_time, "%H:%M:%S.%f")
