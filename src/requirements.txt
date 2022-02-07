@@ -2,3 +2,4 @@ azure-storage-blob==12.7.1
 requests==2.25.1
 PyYAML==5.4.1
 pytest==6.2.2
+flake8==3.9.2
