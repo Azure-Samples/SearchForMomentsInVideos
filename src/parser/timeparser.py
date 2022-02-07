@@ -43,7 +43,9 @@ class TimeParser:
         if (
             end - start < self.interval_in_milliseconds
         ):  # CASE: when appearance is within time interval
-            intervals.append(int(start) - int(start) % self.interval_in_milliseconds) # noqa  E501
+            intervals.append(
+                int(start) - int(start) % self.interval_in_milliseconds
+            )  # noqa  E501
         for i in range(int(start), int(end)):
             if i % self.interval_in_milliseconds == 0:
                 intervals.append(i)
@@ -59,7 +61,9 @@ class TimeParser:
         :param string_time:
         :return: passed time converted to milliseconds
         """
-        if re.search("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", string_time): # noqa: E501,E261
+        if re.search(
+            "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]$", string_time
+        ):  # noqa: E501,E261
             date_time = datetime.strptime(string_time, "%H:%M:%S")
         elif re.search("^([0-1]?[0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9]\.\d", string_time):
             date_time = datetime.strptime(string_time, "%H:%M:%S.%f")
