@@ -42,4 +42,4 @@ jobs:
           python -m pip install -r src/requirements.txt
           flake8 src --ignore=E261,W605,E501,W503
           black  src --check  --diff src
-          python -m pytest .
+          python -m pytest tests/*
