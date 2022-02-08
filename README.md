@@ -8,6 +8,7 @@ products:
 ---
 [![CI](https://github.com/Azure-Samples/azureVISearchableContent/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Azure-Samples/azureVISearchableContent/actions/workflows/ci.yml)
 
+# Azure Video Analyzer Searchable Moments
 
 This project reads [Azure Video Indexer](https://azure.microsoft.com/en-in/services/media-services/video-indexer/) output file (JSON format) into small  chunks of searchable content.
 
@@ -38,7 +39,6 @@ So you can make the following queries to the azure search index to find the righ
   "filter": "search.ismatchscoring('friends') ",
 }
 ```
-# Azure Video Analyzer Searchable Contents
 
 ## Problem Summary
 
