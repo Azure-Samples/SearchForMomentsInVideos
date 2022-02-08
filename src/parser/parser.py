@@ -1,6 +1,6 @@
 import json
 
-from parser.timeparser import TimeParser
+from src.parser.timeparser import TimeParser
 
 
 class Parser:

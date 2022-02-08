@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from src.parser.timeparser import TimeParser
@@ -10,6 +12,7 @@ class TestTimeParser(TestBase):
     This class contains unit tests for UsernameHelper class
     """
 
+    os.environ["MILLISECONDS_INTERVAL"] = "10000"
     time_parser = TimeParser()
     utils = Utils()
 
@@ -26,12 +29,10 @@ class TestTimeParser(TestBase):
         """
         test_alphanum_split for this pattern: "alpha_number_alpha".
         """
-        # GIVEN
-        self.time_parser.interval_in__milliseconds = 15000
         # WHEN
         actual = self.time_parser.get_related_intervals(0, 20000)
         # THEN
-        self.assert_equals(actual, [0, 15000])
+        self.assert_equals(actual, [0, 10000])
 
     def test_string_time_to_milliseconds_seconds_only(self):
         """

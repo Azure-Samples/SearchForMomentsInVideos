@@ -5,7 +5,7 @@ import os
 class Utils:
     def read_json_from_resources(self, path, change_key_to_number=False):
         try:
-            path = os.path.join("resources", path)
+            path = os.path.join("tests/resources", path)
             with open(path) as f:
 
                 json_file = json.load(f)

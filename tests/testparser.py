@@ -1,4 +1,6 @@
-from src.parser import Parser
+import os
+
+from src.parser.parser import Parser
 from tests.testbase import TestBase
 from tests.utils import Utils
 
@@ -7,7 +9,7 @@ class TestParser(TestBase):
     """
     This class contains unit tests for UsernameHelper class
     """
-
+    os.environ["MILLISECONDS_INTERVAL"] = "10000"
     parser = Parser()
     utils = Utils()
 

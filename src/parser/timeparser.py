@@ -5,7 +5,7 @@ from os import getenv
 from datetime import datetime
 import re
 
-from utils.util import Util
+from src.utils.util import Util
 
 
 class TimeParser:
