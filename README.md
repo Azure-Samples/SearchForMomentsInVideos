@@ -25,13 +25,16 @@ So you can make the following queries to the azure search index to find the righ
 ```
 
 - _"Find the moments in any show where the transcript is '**getting old**'"_
+
 ```json
 {
   "search": "getting old",
   "searchFields": "transcripts/transcript"
 }
 ```
+
 - _"Find the moments in Friends show where '**Jean Claude**' Appears_"
+
 ```json
 {  
   "search": "Jean Claude",
@@ -48,24 +51,22 @@ With Azure Video Analyzer, developers can quickly build an AI-powered video anal
 
 Azure Video Analyzer produces one flat json file of a provided video that covers a full video duration. How we can come up with a search index schema which is capable of retrieving data that is most relevant to a moment of a video?
 
-
 ## Solution Summary
 
 Azure In this repository we are processing the output of the Video Analyzer into moments (n seconds) where each moment covers n seconds of a video. We create a Search index having all the features extracted from the Video Analyzer and we upload the extracted moments into the search index. Finally, providing a search query, we can retrieve the related moments of a video from the Azure Search Index.
 The Search index has flexibility of having more fields to accommodate custom features (e.g., features not existing in Azure Video Analyzer and created for that custom usage).
 
-
 ## Products/Technologies/Languages Used
 
 - Products & Technologies:
-    - Azure Video analyzer
-    - Azure Search
-    - Azure Storage Account (optional)
-    - Docker (Optional)
+  - Azure Video analyzer
+  - Azure Search
+  - Azure Storage Account (optional)
+  - Docker (Optional)
 - Languages:
-    - Python
+  - Python
 
-## Architecture (Optional)
+## Architecture
 
 - In [this documentation page](Architecture.md) you may find the architecture of the Azure Video Indexer Searchable moments.
 
@@ -140,7 +141,6 @@ Now using command line you can run the scripts in two ways:
 
 1. Process insights files from your specified storage account and container: `python main.py`
 2. Process insights files from the local filesystem: `python main.py local`
-
 
 #### Alternative - Using Docker
 
@@ -226,7 +226,6 @@ To read  the JSON files from the blob:
 - Run the [storage-client.py](src/client/storageClient.py) script
 
 This will read the data from a container into your local machine
-
 
 **2. Create/Upload data into Azure Search:**
 Now that you have the data in your local machine, you can create a search index and after parsing those data, upload them into the search index
